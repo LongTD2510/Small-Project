@@ -9,7 +9,12 @@ To install axios run API
 
 ## Run : npm i axios
 Router
-
+## npm config set legacy-peer-deps true  
+## npm install --save --legacy-peer-deps
+## npm cache clean --force
+## npm install @atlaskit/button @atlaskit/textfield @atlaskit/icon
+## npm i styled-components
+## npm i uuid
 ## Run : npm install react-router-dom 
 
 ### `npm start`
