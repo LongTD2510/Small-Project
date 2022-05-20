@@ -9,23 +9,17 @@ const TODO_APP_STORAGE_KEY = "TODO_APP";
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [textInput, setTextInput] = useState("");
-  useEffect(() => {
-    function checkTodoList() {
-      const storagedTodoList = localStorage.getItem(TODO_APP_STORAGE_KEY);
-      console.log(storagedTodoList);
-      if (storagedTodoList) {
-        setTodoList(JSON.parse(storagedTodoList));
-      }
+  useState(() => {
+    const storagedTodoList = localStorage.getItem(TODO_APP_STORAGE_KEY);
+    console.log(storagedTodoList)
+    if (storagedTodoList) {
+      setTodoList(JSON.parse(storagedTodoList));
     }
-    window.addEventListener("storage", checkTodoList);
-    return () => {
-      window.removeEventListener("storage", checkTodoList);
-    };
   }, []);
   useEffect(() => {
     console.log(todoList);
     localStorage.setItem(TODO_APP_STORAGE_KEY, JSON.stringify(todoList));
-  }, [todoList]);
+  }, [todoList , TODO_APP_STORAGE_KEY]);
   const onTextInputChange = useCallback((e) => {
     setTextInput(e.target.value);
   }, []);
