@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import TodoList from "./components/TodoList";
 import TextField from "@atlaskit/textfield";
@@ -7,19 +7,17 @@ import { useCallback, useEffect, useState } from "react";
 import { v4 } from "uuid";
 const TODO_APP_STORAGE_KEY = "TODO_APP";
 function App() {
-  const [todoList, setTodoList] = useState([]);
+  const storagedTodoList = JSON.parse(localStorage.getItem(TODO_APP_STORAGE_KEY));
+  const [todoList, setTodoList] = useState(storagedTodoList ?? []);
   const [textInput, setTextInput] = useState("");
-  useState(() => {
-    const storagedTodoList = localStorage.getItem(TODO_APP_STORAGE_KEY);
-    console.log(storagedTodoList)
-    if (storagedTodoList) {
-      setTodoList(JSON.parse(storagedTodoList));
-    }
-  }, []);
   useEffect(() => {
-    console.log(todoList);
+    if (storagedTodoList) {
+      setTodoList(storagedTodoList);
+    }
+  }, [storagedTodoList]);
+  useEffect(() => {
     localStorage.setItem(TODO_APP_STORAGE_KEY, JSON.stringify(todoList));
-  }, [todoList , TODO_APP_STORAGE_KEY]);
+  }, [todoList]);
   const onTextInputChange = useCallback((e) => {
     setTextInput(e.target.value);
   }, []);
