@@ -11,11 +11,6 @@ function App() {
   const [todoList, setTodoList] = useState(storagedTodoList ?? []);
   const [textInput, setTextInput] = useState("");
   useEffect(() => {
-    if (storagedTodoList) {
-      setTodoList(storagedTodoList);
-    }
-  }, [storagedTodoList]);
-  useEffect(() => {
     localStorage.setItem(TODO_APP_STORAGE_KEY, JSON.stringify(todoList));
   }, [todoList]);
   const onTextInputChange = useCallback((e) => {
