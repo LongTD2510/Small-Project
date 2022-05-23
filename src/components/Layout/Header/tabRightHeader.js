@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import bell from "../../assets/img/bell.svg";
-import human from "../../assets/img/avatar-human.svg";
+import bell from "../../../assets/img/bell.svg";
+import human from "../../../assets/img/avatar-human.svg";
 import { N70 } from '@atlaskit/theme/colors';
 import { token } from '@atlaskit/tokens';
 import SettingsIcon from "@atlaskit/icon/glyph/settings";
