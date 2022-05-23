@@ -1,0 +1,99 @@
+.top-header {
+  justify-content: space-between;
+  background-color: #3fc2d3;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: -webkit-fill-available;
+  max-height: 100px;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.top-header,
+.tab-header,
+.right-header,
+.center-header,
+.tab-content,
+.setting-btn,
+.login-container,
+.avatar,
+.drop-down-account {
+  display: flex;
+  align-items: center;
+}
+#id {
+  width: 30%;
+}
+.center-header {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.tab-content {
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.tab-content li {
+  cursor: pointer;
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+.setting-btn,
+.avatar {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  background-color: rgb(43, 35, 52);
+  border-radius: 999px;
+}
+.right-header {
+  width: 100%;
+  justify-content: flex-end;
+}
+/* .setting-item {
+  margin-right: 15px;
+} */
+.setting-btn,
+.avatar {
+  cursor: pointer;
+}
+.avatar {
+  margin: auto;
+  margin-right: 15px;
+}
+.drop-down-account {
+  background: #ffffff;
+  border-radius: 90px;
+  width: 138px;
+  height: 44px;
+}
+.login-container {
+  padding: 10px;
+}
+.human-avatar {
+  width: 50%;
+  display: flex;
+}
+.human-avatar img {
+  margin: auto;
+  width: 25px;
+  height: 25px;
+}
+.drop-down-account span {
+  width: 50%;
+}
+.content {
+  padding: 16px;
+  margin-top: 80px;
+  height: 1500px;
+}
+#logo img {
+  max-height: 80px;
+}
