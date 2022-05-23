@@ -9,6 +9,7 @@ import { v4 } from "uuid";
 import { publicRoutes } from "./routes";
 import { DefaultLayout } from "./components/Layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PostsApi from "./components/PostsApi/PostsApi";
 
 const TODO_APP_STORAGE_KEY = "TODO_APP";
 function App() {
@@ -41,26 +42,28 @@ function App() {
   return (
     <div>
       <Router>
-        {publicRoutes.map((route, index) => {
-          const Page = route.component;
-          let Layout = DefaultLayout;
-          if (route.layout) {
-            Layout = route.layout;
-          } else if(route.layout === null){
-            Layout = Fragment;
-          }
-          return (
-            <Routes
-              key={index}
-              path={route.path}
-              element={
-                <Layout>
-                  <Page />
-                </Layout>
-              }
-            />
-          );
-        })}
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            let Layout = DefaultLayout;
+            if (route.layout) {
+              Layout = route.layout;
+            } else if (route.layout === null) {
+              Layout = Fragment;
+            }
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
       </Router>
       {/* <div className="content">
         <h3>List to work</h3>
