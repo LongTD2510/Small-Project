@@ -1,14 +1,18 @@
 import HeaderDefault from "./Header/HeaderDefault";
 
-import React from 'react'
+import React from "react";
+import Sidebar from "./Sidebar/Sidebar";
 
-export default function DefaultLayout({children}) {
+export default function DefaultLayout({ children }) {
   return (
-      <>
-          <HeaderDefault />
-          <div>
-              {children}
-          </div>
-      </>
-  )
+    <>
+      <div className="wrapper-container">
+        <HeaderDefault />
+        <div className="container">
+          <Sidebar />
+          <div className="content">{children}</div>
+        </div>
+      </div>
+    </>
+  );
 }

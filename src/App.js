@@ -40,7 +40,7 @@ function App() {
     );
   }, []);
   return (
-    <div>
+    <div className="App-project">
       <Router>
         <Routes>
           {publicRoutes.map((route, index) => {

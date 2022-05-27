@@ -1,17 +1,21 @@
 import AlbumsApi from "../components/AlbumsApi/AlbumsApi";
 import CommentsApi from "../components/CommentsApi/CommentsApi";
-import HeaderDefault from "../components/Layout/DefaultLayout/Header/HeaderDefault";
+import { HeaderOnly } from "../components/Layout";
+import Home from "../components/Layout/Home/Home";
 import PhotosApi from "../components/PhotosApi/PhotosApi";
 import PostsApi from "../components/PostsApi/PostsApi";
+import RecipesAPI from "../components/RecipesAPI/RecipesAPI";
 import TodosApi from "../components/TodosApi/TodosApi";
 import UsersApi from "../components/UsersApi/UsersApi";
 const publicRoutes = [
-  { path: '/', component: PostsApi },
-  { path: '/album', component: AlbumsApi },
-  { path: '/comment', component: CommentsApi },
-  { path: '/photo', component: PhotosApi },
-  { path: '/todo', component: TodosApi, layout: HeaderDefault },
-  { path: '/user', component: UsersApi, layout: null},
+  { path: "/", component: Home },
+  { path: "/post", component: PostsApi, layout: HeaderOnly },
+  { path: "/album", component: AlbumsApi },
+  { path: "/comment", component: CommentsApi },
+  { path: "/photo", component: PhotosApi },
+  { path: "/todo", component: TodosApi },
+  { path: "/user", component: UsersApi },
+  { path: "/recipe", component: RecipesAPI },
 ];
 
 const privateRoutes = [];

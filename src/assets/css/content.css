@@ -1,0 +1,21 @@
+.tab-toggle{
+    width: 100%;
+    margin-top: 10px;
+}
+.loading-customize{
+    margin-top: 20px;
+    text-align: center;
+}
+.customize-btn{
+    margin-top: 10px;
+}
+.container{
+    width: 1150px;
+    min-height: 1000px;
+    display: flex;
+}
+.wrapper-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
